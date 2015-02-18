@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Hello Magellan!
+
+  h3 #{name}
+  h4 #{desc}
+  img(src='#{img}', style='height: 300px')
+  
+  if !lastTF
+    form(action="/next", method="GET")
+      input(type="hidden" name='location' value='#{name}')
+      input(type="submit" value="Next Location")
